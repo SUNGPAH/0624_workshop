@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 
 export default function CreateMemo() {
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
+  const router = useRouter();
 
   const submit = async () => {
     const data = {title: title, body: body}
@@ -17,6 +20,9 @@ export default function CreateMemo() {
     if (response.ok) {
       const result = await response.json();
       console.log(result.message); // Data saved successfully.
+      router.push("/memoList")
+      //move to..
+
     } else {
       console.log('Error occurred while saving data.');
     }
