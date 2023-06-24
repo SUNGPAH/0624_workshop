@@ -9,6 +9,15 @@ export default function Login() {
 
 
   const check = () => {
+    if(email !== "sungpah@ringleplus.com"){
+      alert('email not..')
+      return false
+    }
+
+    if(password !== "000000") {
+      alert('email..')
+      return false
+    }
     router.push("/createMemo");
   }
 
