@@ -21,7 +21,7 @@ export default function MemoList() {
   return (
     <div>
       {memoList.map((memo, index) => {
-        return <div>
+        return <div key={memo.id}>
           
           <div onClick={e => moveToMemo(memo.id)}>
             {memo.title}
